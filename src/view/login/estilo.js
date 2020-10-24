@@ -2,6 +2,14 @@ import { StyleSheet, Dimensions } from "react-native"
 
 const largura = Dimensions.get("screen").width;
 const estilo = StyleSheet.create({
+    version:{
+        
+    },
+    versionContent:{
+        display: "flex",
+        alignItems: "flex-end"
+        
+    },
     conteiner: {
         flexGrow: 2,
         justifyContent: "center",
@@ -9,7 +17,7 @@ const estilo = StyleSheet.create({
     },
     inputs: {
         width: largura * 0.6,
-        textAlign: "center",
+        alignSelf: "flex-start"
     },
     botaoView: {
         alignItems: "center",
@@ -28,7 +36,8 @@ const estilo = StyleSheet.create({
         resizeMode: 'stretch',
         alignItems: 'center',
     },
-    user: {
+    loginInputStyle: {
+        display: "flex",
         marginTop:25,
         flexDirection: 'row',
         justifyContent: 'center',

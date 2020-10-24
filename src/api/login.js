@@ -14,8 +14,14 @@ const efetuarLogin = async (usuario, senha) => {
         }
     }
     const resposta = await fetch(`http://${url}:8085/login`, cabecalhoHTTP);
+    if (resposta.status === 403) {
+        throw "Usuario ou senha invalida"
+    }
+    if (resposta.ok) {
+        //consegui logar
+        return resposta.headers.get("authorization").split(" ")[1];
+    }
 
-    console.warn(resposta);
 }
 
 export default efetuarLogin
